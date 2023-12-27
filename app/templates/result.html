@@ -1,0 +1,30 @@
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,300&display=swap');
+    body{
+        font-family: 'Poppins', sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .title{
+        color: #20BEFF;
+    }
+    span{
+        font-weight: bold;
+    }
+    .positive{
+        color: green;
+    }
+    .negative{
+        color: red;
+    }
+</style>
+<h2 class="title">Analysis Result</h2>
+<p><span>Sentiment :</span> 
+    {% if sentiment == 'Positive' %}
+        <span class="positive">Positive</span>
+    {% else %}
+        <span class="negative">Negative</span>
+    {% endif %}
+</p>
+<p><span>Tweet :</span> {{ text }}</p>

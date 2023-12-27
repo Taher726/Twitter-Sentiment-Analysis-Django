@@ -1,0 +1,52 @@
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,300&display=swap');
+  body{
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+  }
+  form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .title{
+    color: #20BEFF;
+  }
+  textarea{
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 15px;
+  }
+  label{
+    display: none;
+  }
+  button{
+    padding: 5px 10px;
+    background-color: white;
+    color: #20BEFF;
+    border: 2px solid #20BEFF;
+    border-radius: 5px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: all 0.4s ease-in-out;
+  }
+  button:hover{
+    background-color: #20BEFF;
+    color: white;
+  }
+  p{
+    margin: 10px 0;
+  }
+</style>
+<h2 class="title">Analyze Tweet</h2>
+<p>This model exclusively functions with the English language.</p>
+<p>Compose your tweet in the text area and perform an analysis.</p>
+<form method="post" action="{% url 'analyse_tweet' %}">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">Analyze</button>
+</form>
